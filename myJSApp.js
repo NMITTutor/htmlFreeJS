@@ -42,7 +42,7 @@
   // add listener for blur for top
   inputLeft.addEventListener("blur",gotLeftBlur);
 
-  // add the text node and input node to the newly created div
+  // add the text node and input node to the display element
   eleDisplay.append(textContent);  
   eleDisplay.append(inputTop); 
   eleDisplay.append(inputLeft); 
