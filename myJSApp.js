@@ -1,5 +1,5 @@
 // Nasty experiments in adding elements  
-// =====================================
+// ------------------------------------
   // Create a DIV element
   let divDisplay =   document.createElement("div"); 
   // and create some content 
