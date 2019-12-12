@@ -1,20 +1,27 @@
 // Nasty experiments in adding elements  
 // ------------------------------------
-  // Create a DIV element
-  let divDisplay =   document.createElement("div"); 
+  // Create a SPAN element
+  let spanDisplay =   document.createElement("span"); 
+  spanDisplay.style.position = "absolute";
+
   // and create some content 
-  let textContent = document.createTextNode("Hi there and greetings!"); 
-  let inputField = document.createElement("input","text");
-    
-  // add an event listener to the input feild.
-  inputField.addEventListener("keyup",gotInput);
+  let textContent = document.createTextNode("Hi there and greetings! Enter Top then Left positions"); 
+  let inputTop = document.createElement("input","text");
+  let inputLeft = document.createElement("input","text"); 
+
+  // add an event listener to get the Top postion value from the inputTop feild.
+  inputTop.addEventListener("keyup",gotTopInput);
+
+  // add an event listener to get the Top postion value from the inputLeft feild.
+  inputLeft.addEventListener("keyup",gotLeftInput);
 
   // add the text node and input node to the newly created div
-  divDisplay.append(textContent);  
-  divDisplay.append(inputField); 
-  
+  spanDisplay.append(textContent);  
+  spanDisplay.append(inputTop); 
+  spanDisplay.append(inputLeft); 
+
   // add the div to the body
-  document.documentElement.appendChild(divDisplay); 
+  document.documentElement.appendChild(spanDisplay); 
   
   function gotInput(event){
     // FROM https://stackoverflow.com/questions/905222/enter-key-press-event-in-javascript
@@ -30,6 +37,20 @@
             
             console.log("Log so far", myStore.getItem("inputLog"));
             inputField.value = inputField.value.toUpperCase();
+    }
+  }
+
+  function gotTopInput(event){
+    // FROM https://stackoverflow.com/questions/905222/enter-key-press-event-in-javascript
+    if(  event.which == 13 || event.keyCode == 13){ 
+      spanDisplay.style.top = Number(event.target.value) + 'px';
+    }
+  }
+
+  function gotLeftInput(event){
+    // FROM https://stackoverflow.com/questions/905222/enter-key-press-event-in-javascript
+    if(  event.which == 13 || event.keyCode == 13){ 
+      spanDisplay.style.left = Number(event.target.value) + 'px';
     }
   }
 // REFACTORING INTO CLASSES
