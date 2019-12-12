@@ -1,8 +1,8 @@
-// Nasty experiments in adding elements and moving them around
-// ------------------------------------------------------------
+// Nasty experiments in adding elements to the DOM and moving them around
+// ----------------------------------------------------------------------
   // Create a display element
-  let eleDisplay =   document.createElement("span"); 
-  eleDisplay.style.position = "absolute";
+  let eleDisplay =   document.createElement("span"); // Try this with different types of element, consider the Box Model
+  
 
   // and create some content 
   let textContent = document.createTextNode("Hi there and greetings! Enter Top then Left positions"); 
@@ -22,6 +22,10 @@
   eleDisplay.append(textContent);  
   eleDisplay.append(inputTop); 
   eleDisplay.append(inputLeft); 
+
+  // Use absolute positioning on the Display element
+  eleDisplay.style.position = "absolute";
+
   // Manage dragging of Display
   // eleDisplay.addEventListener("dragover", dragover_handler);
 
