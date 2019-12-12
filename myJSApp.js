@@ -14,7 +14,7 @@
   divDisplay.append(inputField); 
   
   // add the div to the body
-  document.body.appendChild(divDisplay); 
+  document.documentElement.appendChild(divDisplay); 
   
   function gotInput(event){
     // FROM https://stackoverflow.com/questions/905222/enter-key-press-event-in-javascript
