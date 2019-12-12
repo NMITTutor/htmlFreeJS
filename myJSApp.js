@@ -1,13 +1,37 @@
 // Nasty experiments in adding elements to the DOM and moving them around
 // ----------------------------------------------------------------------
   // Create a display element
-  let eleDisplay =   document.createElement("span"); // Try this with different types of element, consider the Box Model
-  
+  let eleDisplay =   document.createElement("div"); // Try this with different types of element, consider the Box Model
+  eleDisplay.style.width = '800px';
+  eleDisplay.style.height = '600px';
 
   // and create some content 
   let textContent = document.createTextNode("Hi there and greetings! Enter Top then Left positions"); 
   let inputTop = document.createElement("input","text");
   let inputLeft = document.createElement("input","text"); 
+  let canvasDrawing = document.createElement("canvas"); 
+  
+  // canvas width and height
+  canvasDrawing.style.width = '300px';
+  canvasDrawing.style.height = '300px';
+  const ctx = canvasDrawing.getContext('2d');
+
+  // draw something from https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
+  // Set line width
+  ctx.lineWidth = 3;
+
+  // Wall
+  ctx.strokeRect(75, 140, 150, 110);
+
+  // Door
+  ctx.fillRect(130, 190, 40, 60);
+
+  // Roof
+  ctx.moveTo(50, 140);
+  ctx.lineTo(150, 60);
+  ctx.lineTo(250, 140);
+  ctx.closePath();
+  ctx.stroke();
 
   // add an event listener to get the Top postion value from the inputTop feild.
   inputTop.addEventListener("keyup",gotTopInput);
@@ -22,6 +46,7 @@
   eleDisplay.append(textContent);  
   eleDisplay.append(inputTop); 
   eleDisplay.append(inputLeft); 
+  eleDisplay.append(canvasDrawing); 
 
   // Use absolute positioning on the Display element
   eleDisplay.style.position = "absolute";
