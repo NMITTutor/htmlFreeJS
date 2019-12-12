@@ -1,2 +1,4 @@
 # htmlFreeJS
-Exploring html free JS
+Exploring html free JS in the web browser
+
+
