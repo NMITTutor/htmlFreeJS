@@ -11,7 +11,9 @@ Thinking on React JSX - that seems to be a nice sugar - BUT reverts back to "Is 
 
 This leads to the thread on Clojure(js) that is functional programming and definitely takes a similar approach to React in its strategy for working in an immutable universe - new items are created for every new value. Clojure https://youtu.be/0if71HOyVjY, https://clojure.org/reference/transients , https://youtu.be/wASCH_gPnDw  , https://youtu.be/-XzSGPJRBsw. Clojure Web https://youtu.be/_LghX4oDWcY . https://youtu.be/jOX0uK3jsbI , Clojure and React https://youtu.be/x6z2-P1MpUw. 
 
- Is having a go at implmenting a Virtual Dom presentation model next? 
+ Is having a go at implmenting a Virtual Dom presentation model next? Here is a story about REACT's VirtualDOM https://stackoverflow.com/questions/21109361/why-is-reacts-concept-of-virtual-dom-said-to-be-more-performant-than-dirty-mode
+ For me it really only makes sense that the VirtualDOM is somehow faster if we are dealing with a particular approach to server side rendering. The aricle contains a nice comparison of different implementations of the VirtualDOM in different libraries.
+ 
  
 
 
